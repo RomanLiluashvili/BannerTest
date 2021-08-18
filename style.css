@@ -1,0 +1,162 @@
+:root{
+    background-color: #202020;
+    --bgCycle: bgCycle 5s ease-in-out forwards infinite alternate;
+    --hideNseek: hideNseek 5s ease-in-out forwards infinite alternate;
+    --pump: pump 1s ease-in-out forwards infinite alternate;
+    --pump2: pump2 1s ease-in-out forwards infinite alternate;
+}
+
+/* =================== */
+/* ======Banner====== */
+/* ================= */
+
+.banner{
+    position: relative;
+    border: 0px solid red;
+    width: 980px;
+    height: 300px;
+    margin: 0 auto;
+    cursor: pointer;
+    overflow: hidden;
+
+    background-size: contain;
+    background-position: center center;
+
+    animation: var(--bgCycle);
+    
+}
+
+/* ========================= */
+/* ====Banner elements===== */
+/* ======================= */
+
+.banner>*{
+    position: absolute;
+    background-size: contain;
+    background-position: center center;
+
+    animation: var(--hideNseek),var(--pump);
+}
+
+.buttons{
+    background-image: url(./assets/buttons.png);
+    width: 980px;
+    height: 300px;
+}
+
+.slots-and-text{
+    background-image: url(./assets/slots-text.png);
+    width: 980px;
+    height: 300px;
+
+
+    animation: var(--hideNseek),var(--pump),var(--pump2);
+}
+
+/* =================== */
+/* ===Animations===== */
+/* ================= */
+
+@keyframes bgCycle {
+    0%{
+        background-image: url(./assets/Bg.png);
+    }
+
+    40%{
+        background-image: url(./assets/Bg.png);
+    }
+
+    50%{
+        background-image: url(./assets/Movies.png);
+    }
+
+    100%{
+        background-image: url(./assets/Movies.png);
+    }
+}
+
+@keyframes hideNseek {
+    0%{
+        opacity: 1;
+    }
+
+    35%{
+        opacity: 1;
+    }
+
+    40%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes pump {
+    0%{
+        transform: scale(100%);
+    }
+
+    50%{
+        transform: scale(102%);
+    }
+}
+
+@keyframes pump2 {
+    
+    50%{
+        transform: scale(105%);
+    }
+
+}
+
+/* ==================== */
+/* ===Media queries=== */
+/* ================== */
+
+@media (max-width: 1280px) {
+    .banner{
+        width: calc(980px / 1.2);
+        height: calc(300px / 1.2);
+    }
+
+    .banner>*{
+        width: calc(980px / 1.2);
+        height: calc(300px / 1.2);
+    }
+}
+@media (max-width: 850px) {
+    .banner{
+        width: calc(980px / 1.5);
+        height: calc(300px / 1.5);
+    }
+
+    .banner>*{
+        width: calc(980px / 1.5);
+        height: calc(300px / 1.5);
+    }
+}
+@media (max-width: 678px) {
+    .banner{
+        width: calc(980px / 1.8);
+        height: calc(300px / 1.8);
+    }
+
+    .banner>*{
+        width: calc(980px / 1.8);
+        height: calc(300px / 1.8);
+    }
+}
+@media (max-width: 420px) {
+    .banner{
+        width: calc(980px / 3);
+        height: calc(300px / 3);
+    }
+    
+    .banner>*{
+        width: calc(980px / 3);
+        height: calc(300px / 3);
+    }
+}
+
